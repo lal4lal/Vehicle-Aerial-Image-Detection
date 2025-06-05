@@ -15,7 +15,7 @@ model_option = st.selectbox("Select YOLOv11 Model", ["yolov11s", "yolov11n"])
 
 # Predict button
 if uploaded_file is not None:
-    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
 
     if st.button("🔍 Predict"):
         # Simpan ke file sementara
@@ -32,7 +32,7 @@ if uploaded_file is not None:
 
         # Tampilkan hasil prediksi
         result_img = results[0].plot()  # hasil sebagai ndarray
-        st.image(result_img, caption="Detected Vehicles", use_column_width=True)
+        st.image(result_img, caption="Detected Vehicles", use_container_width=True)
 
         # Opsi simpan hasil
         with open(temp_path, "wb") as f:
